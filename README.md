@@ -1,4 +1,4 @@
-# _Pierre's Sweets_
+# _Parks_
 
 #### By _**Ben Goodrow**_
 
@@ -34,7 +34,8 @@ _This is a C# Web SPI application to allow a user to login and create and edit S
 * _Restore and install packages listed in the csproj in the command $ dotnet restore_
 * _Build your dependencies in your command $ dotnet build_
 * _Migrate database with $ dotnet ef migrations add Initial_
-* _Update MySQL database with $ dotnet ef database update_
+* _Update MySQL database with $ dotnet ef database update --context [DbcontextFileNameHere]_
+* _Make sure to update database with each Dbcontext file present to generate all tables necessary._
 * _Next we will execute this compiled code in command $ dotnet run_
 
 ## Known Bugs
@@ -44,13 +45,26 @@ N/A
 ## API Documentation
 
 * _Explore the API endpoints in Postman or a browser. You will not be able to utilize authentication in a browser._
-* _Open Postman and create a POST request using the URL: http://localhost:5000/api/users/authenticate_
+
+# _Further Exploration:
+
+* _Further exploration includes creating and authorizing a user using Identity and generating a JWT token. A user must create an account through a log in. Then they will be prompted to login in in order to generate a JWT token that will then be used to access the Parks API
+
+* _Open Postman and create a POST request using the URL: http://localhost:5000/api/authenticate/register_
 * _Add the following query to the request as raw data in the Body tab: {
     "UserName": "[UserName here]",
     "Email" : "[Email here]",
     "Password": "[Password here]"
 }_
-* _The token will be generated in the response. Copy and paste it as the Token paramenter in the Authorization tab._
+* _Add the following query to the request as raw data in the Body tab: {
+    "username" : "[UserName here]",
+    "password" : "[Password here]"
+}
+* _Use User credentials to login and get a valid JWT token._
+* _ POST request using URL: https://localhost:5001/api/authenticate/login_
+* _The token will be generated in the response. Copy and paste it as the Bearer Token paramenter in the Authorization tab._
+* _Then call the GET method of the Parks api in the URL to have access to API
+* _Example GET URL query:  https://localhost:5000/api/stateparks
 
 # HTTP Request
 

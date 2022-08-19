@@ -9,9 +9,6 @@ namespace Parks.Models
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)  
-        {  
-            base.OnModelCreating(builder);  
-        } 
+        public DbSet<NationalPark> NationalParks { get; set; }
     }
 }
