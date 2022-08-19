@@ -27,9 +27,24 @@ _This is a C# Web SPI application to allow a user to login and create and edit S
 * _Clone this project with the following commands $ git clone https://github.com/bpgoodrow/Parks.Solution_
 * _Navigate to the root of the directory you want to save the project_
 * _Open project in the command $ code ._
-* _Create appsetting.json file and add the following code: $ "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=[the name of your datbase];uid=root;pwd=[YOUR-PASSWORD-HERE];"
-  }
+* _Create appsetting.json file and add the following code: $ {
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning",
+      "System": "Information",
+      "Microsoft": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=[database here];uid=root;pwd=[password here];"
+  },
+  "JWT": {  
+    "ValidAudience": "http://localhost:4200",  
+    "ValidIssuer": "http://localhost:61955",  
+    "Secret": "ByYM000OLlMQG6VVVp1OH7Xzyr7gHuw1qvUC5dcGt3SNM"  
+  }  
+}
 * _Navigate to the sub-directory of the project $ cd PierresSweets_
 * _Restore and install packages listed in the csproj in the command $ dotnet restore_
 * _Build your dependencies in your command $ dotnet build_
