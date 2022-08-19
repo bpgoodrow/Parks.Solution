@@ -9,6 +9,7 @@ using Parks.Models;
 
 namespace Parks.Controllers
 {
+  [Authorize]
   [Route("api/[controller]")]
   [ApiController]
   public class StateParksController : ControllerBase

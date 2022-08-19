@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using JWTAuthentication;
 
-namespace Parks
+namespace Parks.Models
 {
     public class Program
     {

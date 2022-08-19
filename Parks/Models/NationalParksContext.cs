@@ -9,14 +9,9 @@ namespace Parks.Models
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-          builder.Entity<NationalPark>()
-              .HasData(
-                  new NationalPark { NationalParkId = 1, NationalParkName = "Olympic", NationalParkState = "Washington" }
-              );
-        }
-
-        public DbSet<NationalPark> NationalParks { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)  
+        {  
+            base.OnModelCreating(builder);  
+        } 
     }
 }

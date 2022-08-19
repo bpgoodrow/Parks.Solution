@@ -9,14 +9,9 @@ namespace Parks.Models
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-          builder.Entity<StatePark>()
-              .HasData(
-                  new StatePark { StateParkId = 1, StateParkName = "Crater Lake", StateParkState = "Oregon" }
-              );
-        }
-
-        public DbSet<StatePark> StateParks { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)  
+        {  
+            base.OnModelCreating(builder);  
+        }  
     }
 }
